@@ -84,7 +84,6 @@ DICT = [
     ('references', 'odnosi_sie'),  # ALTERNATIVE
     ('references', 'odniesienia'),  # ALTERNATIVE
     ('match', 'mecz'),
-    ('full', 'pelny'),
     ('partial', 'czesciowy'),
     ('simple', 'prosty'),
     ('on', 'na'),
@@ -190,17 +189,25 @@ DICT = [
     ('timestamp', 'znak_czasu'),
     ('time', 'czas'),
     ('char', 'znak'),
-    ('varchar', 'zmienny_znak'),
+    ('varchar', 'zmienznak'),
     ('binary', 'dwojkowy'),
     ('varbinary', 'zmienny_dwojkowy'),
     ('enum', 'wyliczenie'),
     ('text', 'tekst'),
 
+    ("having", "majacy"),  # DQL
+    ('group', 'grupa'),
+    ('join', 'dolaczyc'),
+    ('inner', 'wewnetrzny'),
+    ('left', 'lewy'),
+    ('right', 'prawidlowy'),
+    ('right', 'prawy'),  # ALTERNATIVE
+    ('full', 'pelny'),
+
     ('call', 'dzwonic'),  # DML
     ('low_priority', 'niski_priorytet'),
     ('quick', 'szybki'),
     ('ignore', 'ignorowac'),
-    ('limit', 'limit'),
     ('except', 'oprocz'),
     ('except', 'wyjatek'),  # ALTERNATIVE
     ('distinct', 'odrebny'),
@@ -218,7 +225,6 @@ DICT = [
     ('distinctrow', 'odrebnywiersz'),
     ('offset', 'zrownowazyc'),
     ('union', 'unia'),
-    ('join', 'dolaczyc'),
 
     ('privileges', 'przywileje'),  # DCL
 
@@ -239,7 +245,6 @@ DICT = [
     ("corresponds", "odpowiada"),
     ("MariaDB", "MarysiaBD"),
     ("version", "wersja"),
-    ("right", "prawidlowy"),
     ("near", "blisko"),
     ("at", "na"),
     ("line", "linia"),

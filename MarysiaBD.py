@@ -4,6 +4,53 @@ import sys
 import time
 
 
+class Titled_table:
+    def __init__(self, values, border_side='|', border_top='-', border_cross='+', border_all=False, border_title_size=1, print_nones=True):
+        self.values = values
+        self.rows = len(values)
+        self.cols = 0
+        self.lengths = list()
+        self.max_col_len = 0
+        self.cols = len(max(*values, key=lambda x: len(x)))
+        self.lengths = [0] * self.cols
+        for i_r, row in enumerate(values):
+            for i_v, value in enumerate(row):
+                if value == None and not print_nones:
+                    value = ''
+                    values[i_r][i_v] = ''
+                self.lengths[i_v] = max(self.lengths[i_v], len(str(value)))
+
+        self.__border_length = max(len(border_cross), len(border_side))
+        self.border_side = border_side.center(self.__border_length)
+        self.border_top = border_top[0]
+        self.border_cross = border_cross.center(self.__border_length)
+        self.border_all = border_all
+        self.border_title_size = border_title_size
+        self.print_nones = print_nones
+
+    def __str__(self):
+        border_line = '\n' + self.border_cross
+        for length in self.lengths:
+            border_line = border_line + self.border_top * length + self.border_cross
+        text = border_line
+        for i_row, row in enumerate(self.values):
+            text = text + '\n' + self.border_side
+            for i_col in range(self.cols):
+                if i_col < len(row):
+                    col = row[i_col]
+                else:
+                    col = ''
+                text = text + \
+                    str(col).center(self.lengths[i_col]) + self.border_side
+            if i_row == 0:
+                text = text + border_line * self.border_title_size
+            elif self.border_all:
+                text = text + border_line
+        if not self.border_all:
+            text = text + border_line
+        return text
+
+
 def join(iterable, sep, from_=None, to=None):
     text = ''
     for i, v in enumerate(iterable):
@@ -17,7 +64,7 @@ def join(iterable, sep, from_=None, to=None):
 
 
 def print_table(args, from_=None, to=None):
-    max_len = 0
+    '''max_len = 0
     for line in args:
         LEN = len(line)
         if isinstance(line, tuple):
@@ -42,7 +89,9 @@ def print_table(args, from_=None, to=None):
             else:
                 print(parse(text, from_, to), end=" | ")
         print()
-    print("+", "-" * max_len, "+", sep="")
+    print("+", "-" * max_len, "+", sep="")'''
+    table = Titled_table(args)
+    print(table)
 
 
 def run_interpreter(command):
@@ -57,6 +106,7 @@ def run_interpreter(command):
         print("Blad", parse(str(ex), 0, 1).lower())
         return cursor.fetchwarnings(), False
     if len(output) == 0:
+        print("Pusty zestaw")
         return cursor.fetchwarnings(), True
     if len(output) == 1:
         if isinstance(output[0], tuple):
@@ -83,8 +133,28 @@ def input_command(database) -> str:
 
 def get_title(command: str):
     if command.startswith("pokazywac") or command.startswith("wybierac"):
-        if command.find("z tabela") != -1:
-            return []
+        if command.find('*') == -1:
+            names = command.split()
+            names = names[1:names.index("z")]
+            return [names]
+        elif command.find("z") != -1:
+            tbl_name = command.split()
+            tbl_name = tbl_name[tbl_name.index('z') + 1]
+            if tbl_name.endswith(';'):
+                tbl_name = tbl_name[:-1]
+            COMMAND = f"select column_name from information_schema.columns where table_name = '{tbl_name}'"
+            global cursor, connection
+            try:
+                cursor.execute(COMMAND)
+                output = cursor.fetchall()
+                connection.commit()
+            except Exception as ex:
+                print("Blad", parse(str(ex), 0, 1).lower())
+                return cursor.fetchwarnings(), False
+            else:
+                new_output = [i[0] for i in output]
+                return [new_output]
+
         return [tuple(command.replace(';', '').split()[1:]), ]
     if command.startswith("opis"):
         return [('field', 'type', 'null', 'key', 'default', 'extra')]
@@ -93,14 +163,6 @@ def get_title(command: str):
 
 cursor = None
 connection = None
-'''
-Your MariaDB connection id is 33
-Server version: 10.4.28-MariaDB mariadb.org binary distribution
-
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
-
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-'''
 
 
 def main():
