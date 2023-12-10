@@ -133,11 +133,11 @@ def input_command(database) -> str:
 
 def get_title(command: str):
     if command.startswith("pokazywac") or command.startswith("wybierac"):
-        if command.find('*') == -1:
+        if command.find('*') != -1:
             names = command.split()
             names = names[1:names.index("z")]
             return [names]
-        elif command.find("z") != -1:
+        elif command.find(" z ") != -1:
             tbl_name = command.split()
             tbl_name = tbl_name[tbl_name.index('z') + 1]
             if tbl_name.endswith(';'):

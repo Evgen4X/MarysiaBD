@@ -41,6 +41,7 @@ DICT = [
     ('if', 'jezeli'),  # ALTERNATIVE
     ('not', 'nie'),
     ('exists', 'istnieje'),
+    ('exist', 'istniec'),
     ('ignore', 'ignorowac'),
     ('like', 'lubic'),
     ('table', 'tabela'),
@@ -198,6 +199,8 @@ DICT = [
     ("having", "majacy"),  # DQL
     ('group', 'grupa'),
     ('join', 'dolaczyc'),
+    ('join', 'zlaczyc'),  # ALTERNATIVE
+    ('join', 'zlaczenie'),  # ALTERNATIVE
     ('inner', 'wewnetrzny'),
     ('left', 'lewy'),
     ('right', 'prawidlowy'),
