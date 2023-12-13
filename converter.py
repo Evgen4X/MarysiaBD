@@ -23,6 +23,13 @@ DICT = [
 
     ("current_user", "aktualny_uzytkownik"),  # functions
     ("count", "liczyc"),
+    ("ucase", "dlitery"),
+    ("lcase", "mlitery"),
+    ("round", "okragly"),
+    ("substr", "podtekst"),
+    ("position", "pozycja"),
+    ("truncate", "sciety"),
+    ("truncate", "obciac"), #ALTERNATIVE
     ("min", "min"),
     ("max", "maks"),
     ("sum", "suma"),
