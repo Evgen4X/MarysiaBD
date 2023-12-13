@@ -30,6 +30,9 @@ DICT = [
     ("position", "pozycja"),
     ("truncate", "sciety"),
     ("truncate", "obciac"), #ALTERNATIVE
+    ("replace", "zastepowac"),
+    ("cast", "rzucac"),
+    ("convert", "konwertowac"),
     ("min", "min"),
     ("max", "maks"),
     ("sum", "suma"),
@@ -231,6 +234,10 @@ DICT = [
     ('value', 'wartosc'),
     ('duplicate', 'duplikowac'),
     ('intersect', 'przecinac'),
+    ("inner", "wewnetrzny"),
+    ("left", "lewy"),
+    ("right", "poprawny"),
+    ("right", "prawy"), # ALTERNATIVE
     ('straight_join', 'prosto_dolaczyc'),
     ('distinctrow', 'odrebnywiersz'),
     ('offset', 'zrownowazyc'),
