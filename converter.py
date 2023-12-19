@@ -31,15 +31,6 @@ DICT = [
     ("truncate", "sciety"),
     ("truncate", "obciac"),  # ALTERNATIVE
     ("replace", "zastepowac"),
-    ("length", "dlugosc"),
-    ("concat", "powiazac"),
-    ("format", "format"),
-    ("field", "pole"),
-    ("insert", "wstawiac"),
-    ("repeat", "powtarzac"),
-    ("reverse", "odwracac"),
-    ("replace", "zastepowac"),
-    ("replace", "zamieniac"),  # ALTERNATIVE
     ("cast", "rzucac"),
     ("convert", "konwertowac"),
     ("min", "min"),
@@ -230,31 +221,27 @@ DICT = [
     ("right", "prawy"),  # ALTERNATIVE
     ("full", "pelny"),
 
-    ("call", "dzwonic"),  # DML
-    ("low_priority", "niski_priorytet"),
-    ("quick", "szybki"),
-    ("ignore", "ignorowac"),
-    ("except", "oprocz"),
-    ("except", "wyjatek"),  # ALTERNATIVE
-    ("distinct", "odrebny"),
-    ("handler", "treser"),
-    ("open", "otwierac"),
-    ("close", "zamykac"),
-    ("import", "importowac"),
-    ("import", "import"),  # ALTERNATIVE
-    ("delayed", "opozniony"),
-    ("high_priority", "wysoki_priorytet"),
-    ("value", "wartosc"),
-    ("duplicate", "duplikowac"),
-    ("intersect", "przecinac"),
-    ("inner", "wewnetrzny"),
-    ("left", "lewy"),
-    ("right", "poprawny"),
-    ("right", "prawy"),  # ALTERNATIVE
-    ("straight_join", "prosto_dolaczyc"),
-    ("distinctrow", "odrebnywiersz"),
-    ("offset", "zrownowazyc"),
-    ("union", "unia"),
+    ('call', 'dzwonic'),  # DML
+    ('low_priority', 'niski_priorytet'),
+    ('quick', 'szybki'),
+    ('ignore', 'ignorowac'),
+    ('except', 'oprocz'),
+    ('except', 'wyjatek'),  # ALTERNATIVE
+    ('distinct', 'odrebny'),
+    ('handler', 'treser'),
+    ('open', 'otwierac'),
+    ('close', 'zamykac'),
+    ('import', 'importowac'),
+    ('import', 'import'),  # ALTERNATIVE
+    ('delayed', 'opozniony'),
+    ('high_priority', 'wysoki_priorytet'),
+    ('value', 'wartosc'),
+    ('duplicate', 'duplikowac'),
+    ('intersect', 'przecinac'),
+    ('straight_join', 'prosto_dolaczyc'),
+    ('distinctrow', 'odrebnywiersz'),
+    ('offset', 'zrownowazyc'),
+    ('union', 'unia'),
 
     ("privileges", "przywileje"),  # DCL
 
