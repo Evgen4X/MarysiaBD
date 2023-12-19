@@ -1,238 +1,265 @@
 NO_UPPER = [
-    'mysql', 'mojsql', 'root', 'zrodlo'
+    'mysql", "mojsql", "root", "zrodlo'
 ]
 
 DICT = [
-    ('help', 'pomoc'),  # basic commands
-    ('create', 'tworzyc'),
-    ('create', 'utworzyc'),  # ALTERNATIVE
-    ('create', 'stworzyc'),  # ALTERNATIVE
-    ('drop', 'upuszczac'),
-    ('alter', 'zmieniac'),
-    ('insert', 'wstawiac'),
-    ('update', 'aktualizacja'),
-    ('update', 'aktualizowac'),  # ALTERNATIVE
-    ('delete', 'usuwac'),
-    ('select', 'wybierac'),
-    ('grant', 'nadawac'),
-    ('revoke', 'uniewaznic'),
-    ('replace', 'zastepowac'),
-    ('exit', 'wyjscie'),
-    ('desc', 'opis'),
-    ('use', 'uzywac'),
+    ("help", "pomoc"),  # basic commands
+    ("create", "tworzyc"),
+    ("create", "utworzyc"),  # ALTERNATIVE
+    ("create", "stworzyc"),  # ALTERNATIVE
+    ("drop", "upuszczac"),
+    ("alter", "zmieniac"),
+    ("insert", "wstawiac"),
+    ("update", "aktualizacja"),
+    ("update", "aktualizowac"),  # ALTERNATIVE
+    ("delete", "usuwac"),
+    ("select", "wybierac"),
+    ("grant", "nadawac"),
+    ("revoke", "uniewaznic"),
+    ("replace", "zastepowac"),
+    ("exit", "wyjscie"),
+    ("desc", "opis"),
+    ("use", "uzywac"),
 
     ("current_user", "aktualny_uzytkownik"),  # functions
     ("count", "liczyc"),
+    ("ucase", "dlitery"),
+    ("lcase", "mlitery"),
+    ("round", "okragly"),
+    ("substr", "podtekst"),
+    ("position", "pozycja"),
+    ("truncate", "sciety"),
+    ("truncate", "obciac"),  # ALTERNATIVE
+    ("replace", "zastepowac"),
+    ("length", "dlugosc"),
+    ("concat", "powiazac"),
+    ("format", "format"),
+    ("field", "pole"),
+    ("insert", "wstawiac"),
+    ("repeat", "powtarzac"),
+    ("reverse", "odwracac"),
+    ("replace", "zastepowac"),
+    ("replace", "zamieniac"),  # ALTERNATIVE
+    ("cast", "rzucac"),
+    ("convert", "konwertowac"),
     ("min", "min"),
     ("max", "maks"),
     ("sum", "suma"),
     ("avg", "sr"),
     ("floor", "podloga"),
+    ("floor", "dol"),  # ALTERNATIVE
     ("ceil", "sufit"),
+    ("ceil", "gora"),  # ALTERNATIVE
+    ("truncate", "sciety"),
+    ("substr")
     ("power", "moc"),
     ("current_date", "aktualny_data"),
     ("current_time", "aktualny_czas"),
 
-    ('show', 'pokazywac'),  # DDL
-    ('tables', 'tabele'),
-    ('databases', 'bazy_danych'),
-    ('database', 'baza_danych'),
-    ('if', 'jesli'),
-    ('if', 'jezeli'),  # ALTERNATIVE
-    ('not', 'nie'),
-    ('exists', 'istnieje'),
-    ('exist', 'istniec'),
-    ('ignore', 'ignorowac'),
-    ('like', 'lubic'),
-    ('table', 'tabela'),
-    ('column', 'kolumna'),
-    ('as', 'jak'),
-    ('index', 'indeks'),
-    ('key', 'klucz'),
-    ('primary', 'podstawowy'),
-    ('add', 'dodawac'),
-    ('constraint', 'ograniczenie'),
-    ('unique', 'unikalny'),
-    ('fulltext', 'pelny_tekst'),
-    ('spatial', 'przestrzenny'),
-    ('visible', 'widoczny'),
-    ('invisible', 'niewidzialny'),
-    ('invisible', 'niewidoczny'),  # ALTERNATIVE
-    ('auto_increment', 'auto_przyrost'),
-    ('comment', 'comentarz'),
-    ('collate', 'zestawiac'),
-    ('collate', 'zestawic'),  # ALTERNATIVE
-    ('column_format', 'format_kolumny'),
-    ('column_format', 'kolumna_format'),  # ATLERNATIVE
-    ('fixed', 'naprawiony'),
-    ('default', 'domyslny'),
-    ('engine_attribute', 'silnik_atrybut'),
-    ('engine_attribute', 'atrybut_silnika'),  # ALTERNATIVE
-    ('secondary_engine_attribute', 'wtorny_silnik_atrybut'),
-    ('secondary_engine_attribute', 'atrybut_drugiego_silnika'),  # ALTERNATIVE
-    ('storage', 'magazyn'),
-    ('disk', 'dysk'),
-    ('memory', 'pamiec'),
-    ('generated', 'wygenerowany'),
-    ('always', 'zawsze'),
-    ('virtual', 'wirtualny'),
-    ('null', 'zero'),
-    ('null', 'nic'),  # ALTERNATIVE
-    ('stored', 'przechowywany'),
-    ('check', 'sprawdzac'),
-    ('enforced', 'wymuszony'),
-    ('references', 'bibliografia'),
-    ('references', 'odnosi_sie'),  # ALTERNATIVE
-    ('references', 'odniesienia'),  # ALTERNATIVE
-    ('match', 'mecz'),
-    ('partial', 'czesciowy'),
-    ('simple', 'prosty'),
-    ('on', 'na'),
-    ('dynamic', 'dynamiczny'),
-    ('restrict', 'ograniczac'),
-    ('cascade', 'kaskada'),
-    ('set', 'ustawiac'),
-    ('set', 'ustawic'),  # ALTERNATIVE
-    ('no', 'brak'),
-    ('action', 'dzialanie'),
-    ('partition', 'przegroda'),
-    ('by', 'przez'),
-    ('linear', 'liniowy'),
-    ('hash', 'hasz'),
-    ('algorithm', 'algorytm'),
-    ('values', 'wartosci'),
-    ('data', 'dane'),
-    ('load', 'zaladowac'),
-    ('load', 'zaladowywac'),  # ALTERNATIVE
-    ('local', 'lokalny'),
-    ('infile', 'wplik'),
-    ('infile', 'wnetrzny_plik'),  # ALTERNATIVE
-    ('fields', 'pola'),
-    ('ternimated', 'terminowany'),
-    ('terminated', 'zakonczony'),  # ALTERNATIVE
-    ('lines', 'linie'),
-    ('into', 'w_do'),
-    ('outfile', 'zplik'),
-    ('outfile', 'zewnetrzny_plik'),  # ALTERNATIVE
-    ('from', 'z'),
-    ('in', 'w'),
-    ('character', 'postac'),
-    ('where', 'gdzie'),
-    ('schema', 'schemat'),
-    ('function', 'funkcjonowac'),
-    ('function', 'funkcja'),  # ALTERNATIVE
-    ('event', 'wydarzenie'),
-    ('definer', 'definitor'),
-    ('schedule', 'harmonogram'),
-    ('enable', 'wlaczyc'),
-    ('disable', 'wylaczyc'),
-    ('interval', 'interwal'),
-    ('do', 'zrobic'),
-    ('year', 'rok'),
-    ('quarter', 'kwartal'),
-    ('month', 'miesiac'),
-    ('hour', 'godzina'),
-    ('minute', 'minuta'),
-    ('second', 'drugi'),
-    ('week', 'tydzien'),
-    ('competition', 'konkurs'),
-    ('preserve', 'utrzymywac'),
-    ('starts', 'zaczyna'),
-    ('ends', 'konczy'),
-    ('procedure', 'procedura'),
-    ('returns', 'zwraca'),
-    ('returns', 'zwroty'),  # ALTERNATIVE
-    ('language', 'jezyk'),
-    ('server', 'serwer'),
-    ('wrapper', 'obwoluta'),
-    ('trigger', 'spust'),
-    ('for', 'dla'),
-    ('each', 'kazdy'),
-    ('row', 'wiersz'),
-    ('truncate', 'sciety'),
-    ('rename', 'przemianowac'),
-    ('to', 'do'),
-    ('encryption', 'szyfrowanie'),
-    ('read', 'czytac'),
-    ('only', 'tylko'),
-    ('completion', 'ukonczenie'),
-    ('contains', 'zawiera'),
-    ('modifies', 'modyfikuje'),
-    ('options', 'opcje'),
-    ('first', 'prierszy'),
-    ('after', 'po'),
-    ('change', 'zmiana'),
-    ('change', 'przemieniac'),  # ALTERNATIVE
-    ('lock', 'zamek'),
-    ('modify', 'modyfikowac'),
-    ('order', 'zamowienie'),
-    ('validation', 'walidacja'),
-    ('with', 'z'),
-    ('without', 'bez'),
-    ('foreign', 'zagraniczny'),
-    ('temporary', 'tymczasowy'),
-    ('tinyint', 'malutkicalk'),
-    ('boolean', 'logiczny'),
-    ('smallint', 'malycalk'),
-    ('mediumint', 'srednicalk'),
-    ('int', 'calk'),
-    ('integer', 'calkowity'),
-    ('bigint', 'duzycalk'),
-    ('blob', 'kropla'),
-    ('decimal', 'dziesietny'),
-    ('numeric', 'numeryczny'),
-    ('bit', 'fragment'),
-    ('float', 'platforma'),
-    ('double', 'podwojnie'),
-    ('real', 'prawdziwy'),
-    ('date', 'data'),
-    ('datetime', 'datagodzina'),
-    ('timestamp', 'znak_czasu'),
-    ('time', 'czas'),
-    ('char', 'znak'),
-    ('varchar', 'zmienznak'),
-    ('binary', 'dwojkowy'),
-    ('varbinary', 'zmienny_dwojkowy'),
-    ('enum', 'wyliczenie'),
-    ('text', 'tekst'),
+    ("show", "pokazywac"),  # DDL
+    ("tables", "tabele"),
+    ("databases", "bazy_danych"),
+    ("database", "baza_danych"),
+    ("if", "jesli"),
+    ("if", "jezeli"),  # ALTERNATIVE
+    ("not", "nie"),
+    ("exists", "istnieje"),
+    ("exist", "istniec"),
+    ("ignore", "ignorowac"),
+    ("like", "lubic"),
+    ("table", "tabela"),
+    ("column", "kolumna"),
+    ("as", "jak"),
+    ("index", "indeks"),
+    ("key", "klucz"),
+    ("primary", "podstawowy"),
+    ("add", "dodawac"),
+    ("constraint", "ograniczenie"),
+    ("unique", "unikalny"),
+    ("fulltext", "pelny_tekst"),
+    ("spatial", "przestrzenny"),
+    ("visible", "widoczny"),
+    ("invisible", "niewidzialny"),
+    ("invisible", "niewidoczny"),  # ALTERNATIVE
+    ("auto_increment", "auto_przyrost"),
+    ("comment", "comentarz"),
+    ("collate", "zestawiac"),
+    ("collate", "zestawic"),  # ALTERNATIVE
+    ("column_format", "format_kolumny"),
+    ("column_format", "kolumna_format"),  # ATLERNATIVE
+    ("fixed", "naprawiony"),
+    ("default", "domyslny"),
+    ("engine_attribute", "silnik_atrybut"),
+    ("engine_attribute", "atrybut_silnika"),  # ALTERNATIVE
+    ("secondary_engine_attribute", "wtorny_silnik_atrybut"),
+    ("secondary_engine_attribute", "atrybut_drugiego_silnika"),  # ALTERNATIVE
+    ("storage", "magazyn"),
+    ("disk", "dysk"),
+    ("memory", "pamiec"),
+    ("generated", "wygenerowany"),
+    ("always", "zawsze"),
+    ("virtual", "wirtualny"),
+    ("null", "zero"),
+    ("null", "nic"),  # ALTERNATIVE
+    ("stored", "przechowywany"),
+    ("check", "sprawdzac"),
+    ("enforced", "wymuszony"),
+    ("references", "bibliografia"),
+    ("references", "odnosi_sie"),  # ALTERNATIVE
+    ("references", "odniesienia"),  # ALTERNATIVE
+    ("match", "mecz"),
+    ("partial", "czesciowy"),
+    ("simple", "prosty"),
+    ("on", "na"),
+    ("dynamic", "dynamiczny"),
+    ("restrict", "ograniczac"),
+    ("cascade", "kaskada"),
+    ("set", "ustawiac"),
+    ("set", "ustawic"),  # ALTERNATIVE
+    ("no", "brak"),
+    ("action", "dzialanie"),
+    ("partition", "przegroda"),
+    ("by", "przez"),
+    ("linear", "liniowy"),
+    ("hash", "hasz"),
+    ("algorithm", "algorytm"),
+    ("values", "wartosci"),
+    ("data", "dane"),
+    ("load", "zaladowac"),
+    ("load", "zaladowywac"),  # ALTERNATIVE
+    ("local", "lokalny"),
+    ("infile", "wplik"),
+    ("infile", "wnetrzny_plik"),  # ALTERNATIVE
+    ("fields", "pola"),
+    ("ternimated", "terminowany"),
+    ("terminated", "zakonczony"),  # ALTERNATIVE
+    ("lines", "linie"),
+    ("into", "w_do"),
+    ("outfile", "zplik"),
+    ("outfile", "zewnetrzny_plik"),  # ALTERNATIVE
+    ("from", "z"),
+    ("in", "w"),
+    ("character", "postac"),
+    ("where", "gdzie"),
+    ("schema", "schemat"),
+    ("function", "funkcjonowac"),
+    ("function", "funkcja"),  # ALTERNATIVE
+    ("event", "wydarzenie"),
+    ("definer", "definitor"),
+    ("schedule", "harmonogram"),
+    ("enable", "wlaczyc"),
+    ("disable", "wylaczyc"),
+    ("interval", "interwal"),
+    ("do", "zrobic"),
+    ("year", "rok"),
+    ("quarter", "kwartal"),
+    ("month", "miesiac"),
+    ("hour", "godzina"),
+    ("minute", "minuta"),
+    ("second", "drugi"),
+    ("week", "tydzien"),
+    ("competition", "konkurs"),
+    ("preserve", "utrzymywac"),
+    ("starts", "zaczyna"),
+    ("ends", "konczy"),
+    ("procedure", "procedura"),
+    ("returns", "zwraca"),
+    ("returns", "zwroty"),  # ALTERNATIVE
+    ("language", "jezyk"),
+    ("server", "serwer"),
+    ("wrapper", "obwoluta"),
+    ("trigger", "spust"),
+    ("for", "dla"),
+    ("each", "kazdy"),
+    ("row", "wiersz"),
+    ("rename", "przemianowac"),
+    ("to", "do"),
+    ("encryption", "szyfrowanie"),
+    ("read", "czytac"),
+    ("only", "tylko"),
+    ("completion", "ukonczenie"),
+    ("contains", "zawiera"),
+    ("modifies", "modyfikuje"),
+    ("options", "opcje"),
+    ("first", "prierszy"),
+    ("after", "po"),
+    ("change", "zmiana"),
+    ("change", "przemieniac"),  # ALTERNATIVE
+    ("lock", "zamek"),
+    ("modify", "modyfikowac"),
+    ("order", "zamowienie"),
+    ("validation", "walidacja"),
+    ("with", "z"),
+    ("without", "bez"),
+    ("foreign", "zagraniczny"),
+    ("temporary", "tymczasowy"),
+    ("tinyint", "malutkicalk"),
+    ("boolean", "logiczny"),
+    ("smallint", "malycalk"),
+    ("mediumint", "srednicalk"),
+    ("int", "calk"),
+    ("integer", "calkowity"),
+    ("bigint", "duzycalk"),
+    ("blob", "kropla"),
+    ("decimal", "dziesietny"),
+    ("numeric", "numeryczny"),
+    ("bit", "fragment"),
+    ("float", "platforma"),
+    ("double", "podwojnie"),
+    ("real", "prawdziwy"),
+    ("date", "data"),
+    ("datetime", "datagodzina"),
+    ("timestamp", "znak_czasu"),
+    ("time", "czas"),
+    ("char", "znak"),
+    ("varchar", "zmienznak"),
+    ("binary", "dwojkowy"),
+    ("varbinary", "zmienny_dwojkowy"),
+    ("enum", "wyliczenie"),
+    ("text", "tekst"),
 
     ("having", "majacy"),  # DQL
-    ('group', 'grupa'),
-    ('join', 'dolaczyc'),
-    ('join', 'zlaczyc'),  # ALTERNATIVE
-    ('join', 'zlaczenie'),  # ALTERNATIVE
-    ('inner', 'wewnetrzny'),
-    ('left', 'lewy'),
-    ('right', 'prawidlowy'),
-    ('right', 'prawy'),  # ALTERNATIVE
-    ('full', 'pelny'),
+    ("group", "grupa"),
+    ("limit", "limit"),
+    ("join", "dolaczyc"),
+    ("join", "zlaczyc"),  # ALTERNATIVE
+    ("join", "zlaczenie"),  # ALTERNATIVE
+    ("inner", "wewnetrzny"),
+    ("left", "lewy"),
+    ("right", "prawidlowy"),
+    ("right", "prawy"),  # ALTERNATIVE
+    ("full", "pelny"),
 
-    ('call', 'dzwonic'),  # DML
-    ('low_priority', 'niski_priorytet'),
-    ('quick', 'szybki'),
-    ('ignore', 'ignorowac'),
-    ('except', 'oprocz'),
-    ('except', 'wyjatek'),  # ALTERNATIVE
-    ('distinct', 'odrebny'),
-    ('handler', 'treser'),
-    ('open', 'otwierac'),
-    ('close', 'zamykac'),
-    ('import', 'importowac'),
-    ('import', 'import'),  # ALTERNATIVE
-    ('delayed', 'opozniony'),
-    ('high_priority', 'wysoki_priorytet'),
-    ('value', 'wartosc'),
-    ('duplicate', 'duplikowac'),
-    ('intersect', 'przecinac'),
-    ('straight_join', 'prosto_dolaczyc'),
-    ('distinctrow', 'odrebnywiersz'),
-    ('offset', 'zrownowazyc'),
-    ('union', 'unia'),
+    ("call", "dzwonic"),  # DML
+    ("low_priority", "niski_priorytet"),
+    ("quick", "szybki"),
+    ("ignore", "ignorowac"),
+    ("except", "oprocz"),
+    ("except", "wyjatek"),  # ALTERNATIVE
+    ("distinct", "odrebny"),
+    ("handler", "treser"),
+    ("open", "otwierac"),
+    ("close", "zamykac"),
+    ("import", "importowac"),
+    ("import", "import"),  # ALTERNATIVE
+    ("delayed", "opozniony"),
+    ("high_priority", "wysoki_priorytet"),
+    ("value", "wartosc"),
+    ("duplicate", "duplikowac"),
+    ("intersect", "przecinac"),
+    ("inner", "wewnetrzny"),
+    ("left", "lewy"),
+    ("right", "poprawny"),
+    ("right", "prawy"),  # ALTERNATIVE
+    ("straight_join", "prosto_dolaczyc"),
+    ("distinctrow", "odrebnywiersz"),
+    ("offset", "zrownowazyc"),
+    ("union", "unia"),
 
-    ('privileges', 'przywileje'),  # DCL
+    ("privileges", "przywileje"),  # DCL
 
-    ('commit', 'popelniac'),  # TCL
-    ('rollback', 'wycofanie'),
+    ("commit", "popelniac"),  # TCL
+    ("rollback", "wycofanie"),
 
     ("error", "blad"),  # outputs
     ("query", "zapytanie"),
@@ -255,7 +282,6 @@ DICT = [
     ("enpty", "pusty"),
     ("affected", "dotkniety"),
     ("extra", "dodatkowy"),
-    ("field", "pole"),
     ("warning", "ostrzezenie"),
     ("warnings", "ostrzezenia"),
     ("incorrect", "bledny"),
@@ -359,7 +385,7 @@ def main():
 
     input_file = sys.argv[1]
 
-    with open(input_file, 'r') as file:
+    with open(input_file, "r") as file:
         host = file.readline()[2:].strip()
         user = file.readline()[2:].strip()
         password = file.readline()[2:].strip()
@@ -368,7 +394,7 @@ def main():
     print(f"USER: {user}")
     print(f"PASSWORD: {password}")
 
-    with open(input_file, 'r') as file:
+    with open(input_file, "r") as file:
         bd_code = file.read()
 
     sql_code = parse(bd_code, 1, 0)
